@@ -20,6 +20,9 @@ class TestCheckPassword(unittest.TestCase):
     def test_special(self):
         self.assertFalse(strong_password.check_password("Aa1x11111")[0])
 
+    def test_valid_password(self):
+        self.assertTrue(strong_password.check_password("Aa1_11111")[0])
+
 
 if __name__ == "__main__":
     unittest.main()
