@@ -7,18 +7,15 @@ MAX_PASSWORD_LENGTH = 15
 
 
 def check_password(password: str) -> tuple[bool, str]:
-    if not password:
-        return False, "Empty password."
-    pass_len = len(password)
-    if pass_len < MIN_PASSWORD_LENGTH:
-        return (
-            False,
-            f"Password must be at least {MIN_PASSWORD_LENGTH} characters long.",
-        )
-    if pass_len > MAX_PASSWORD_LENGTH:
-        return False, f"Password must be at most {MAX_PASSWORD_LENGTH} characters long."
-
     message = ""
+    pass_len = len(password)
+    if pass_len == 0:
+        message += "Empty password.\n"
+    elif pass_len < MIN_PASSWORD_LENGTH:
+        message += f"Password must be at least {MIN_PASSWORD_LENGTH} characters long.\n"
+    elif pass_len > MAX_PASSWORD_LENGTH:
+        message += f"Password must be at most {MAX_PASSWORD_LENGTH} characters long.\n"
+
     digits_flag = False
     lowercase_flag = False
     uppercase_flag = False
@@ -53,7 +50,7 @@ def main():
         if check:
             print(f"Attempt {i}. Password is VALID.")
             break
-        print(f"Attempt {i}. Password is INVALID: {message}")
+        print(f"Attempt {i}. Password is INVALID:\n{message}")
     else:
         print("Access denied.")
         return
