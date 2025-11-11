@@ -14,9 +14,6 @@ In/Out: '070411111426152419071413' <-> Out/In: 'hello python'
 
 """
 
-import string
-from unittest import case
-
 SYMBOL_TABLE = {
     0: "a",
     1: "b",
