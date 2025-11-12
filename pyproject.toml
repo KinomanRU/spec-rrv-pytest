@@ -3,4 +3,6 @@ name = "spec-rrv-pytest"
 version = "0.1.0"
 description = "Practice for specialist.ru-pytest"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pytest>=9.0.0",
+]
