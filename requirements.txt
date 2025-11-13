@@ -1,1 +1,4 @@
+django==5.2.8
 pytest==9.0.0
+pytest-cov==7.0.0
+pytest-django==4.11.1
